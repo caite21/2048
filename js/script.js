@@ -479,6 +479,9 @@ function refreshCookies() {
     document.getElementById('top-score-1').innerHTML = getCookie('top-score-1');    
     document.getElementById('top-score-2').innerHTML = getCookie('top-score-2');
     document.getElementById('top-score-3').innerHTML = getCookie('top-score-3');
+    document.getElementById('top-score-1-bottom').innerHTML = getCookie('top-score-1');    
+    document.getElementById('top-score-2-bottom').innerHTML = getCookie('top-score-2');
+    document.getElementById('top-score-3-bottom').innerHTML = getCookie('top-score-3');
     document.getElementById('username').innerHTML = getCookie('username');
 }
 
@@ -576,6 +579,3 @@ function gameOver() {
     document.getElementById("game-over-score").innerHTML = SCORE;
     saveScore();
 }
-
-
-
