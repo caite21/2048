@@ -5,33 +5,8 @@
     --h3-size: 26px;
     --p-size: 20px;
     --square-font-size: 48px;
-     
     --text-color: rgb(108, 99, 91);
-    --title-color: rgb(233, 136, 101);
-}
-
-
-
-.color_codes {
-    color: rgb(219, 209, 180);     /*2*/
-    color: rgb(214, 197, 140);     /*4*/
-    color: rgb(232, 177, 105);    /*8*/
-    color: rgb(236, 158, 129); ;     /*16*/
-    color: rgb(239, 156, 174); ;     /*32*/
-    color: rgb(212, 166, 223);     /*64*/
-    color: rgb(186, 198, 255);    /*128*/
-    color: rgb(165, 224, 210);     /*256*/
-    color: rgb(184, 219, 143);     /*512*/
-    color: rgb(237, 126, 126);     /*1024*/
-    color: rgb(198, 103, 159);   /*2048*/
-    color: rgb(106, 117, 188);  /*4096*/
-    color: rgb(92, 172, 94);    /*8192*/
-    color: rgb(216, 185, 60); 
-    color: rgb(160, 37, 37); 
-    color: rgb(112, 24, 127);
-
-
-    color: rgb(243, 235, 211);
+    --title-color: rgb(224, 141, 73);
 }
 
 h1 {
@@ -63,11 +38,7 @@ p {
     font-size: var(--p-size);
     font-family: Calibri, sans-serif;
     margin: 0px;
-    /* margin-left: 10px;
-    margin-right: 10px; */
 }
-
-
 
 button {
     background-color: rgb(226, 221, 200);
@@ -97,7 +68,7 @@ button:active {
     
 }
 
-.smallButton {
+.small-button {
     height: fit-content;
     font-weight: none;
     font-size: var(--p-size);
@@ -106,11 +77,11 @@ button:active {
     box-shadow: 0px 0px 0px 1px rgba(18, 15, 12, 0.15);
 }
 
-#menu_button {
+#menu-button {
     margin: 0px;
 }
 
-#scores_button {
+#scores-button {
     display: none;
 }
 
@@ -120,7 +91,7 @@ button:active {
     justify-content: center; 
 }
 
-.row_split {
+.row-split {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -143,7 +114,7 @@ button:active {
     justify-content: right; 
 }
 
-#game_border {
+#game-border {
     width: var(--main-width);
     height: var(--main-width);
     margin:auto;
@@ -151,7 +122,7 @@ button:active {
     margin-bottom: 10px;
 }
 
-#game_border:focus {
+#game-border:focus {
     outline: none;
 }
 
@@ -160,7 +131,7 @@ button:active {
     margin:auto;
 }
 
-#container_border {
+#container-border {
     width: var(--main-width);
     height: var(--main-width);
     background-color: rgb(161, 145, 128);
@@ -179,7 +150,7 @@ button:active {
     align-self: center;
 }
 
-.background_square {
+.background-square {
     width: 21%;
     height: 21%;
     background-color: rgb(179, 162, 144);
@@ -200,7 +171,7 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rbg(255, 248, 230);
+    background-color: rgb(255, 248, 230);
     color:  rgb(141, 126, 107);
     font-size: var(--square-font-size);
     font-family: Calibri, sans-serif;
@@ -227,7 +198,7 @@ button:active {
     align-self: auto;
 }
 
-.sub_menu {
+.sub-menu {
     visibility: hidden;
     z-index: 4;
     background-color: #eae4d4;
@@ -242,25 +213,33 @@ button:active {
     align-self: center;
 }
 
-.score_list {
-    /* background-color: beige; */
+.score-list {
     border-radius: 15px;
     padding: 2%;
-    /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.5); */
-}
-
-#leaderboardList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    color: var(--text-color);
-    font-size: var(--p-size);
-    font-family: Calibri, sans-serif;
 }
 
 .slide { 
     transition-duration: 0.15s;
     transition-timing-function: ease-out;
-    transition-delay: 0s;
+}
+
+.colour-examples {
+    color: rgb(230, 221, 196);     /*2*/
+    color: rgb(232, 215, 148);     /*4*/
+    color: rgb(236, 190, 104);    /*8*/
+    color: rgb(237, 158, 93);     /*16*/
+    color: rgb(237, 150, 142);    /*32*/
+    color: #ccaad1;        /*64*/
+    color: #58a1b3;     /*128*/
+    color: #345f88;     /*256*/
+    color: #83639d;     /*512*/
+    color: #3f893f;     /*1024*/
+    color: #af5852;   /*2048*/
+    color: #d3aa13;  /*4096*/
+    color: #85b12f;    /*8192*/
+    color: rgb(34, 131, 126); 
+    color: rgb(65, 35, 110); 
+    color: rgb(133, 48, 48);
 }
 
 @keyframes mergeAnimation {
@@ -316,19 +295,6 @@ button:active {
         transform: scale(1);
     }
 }
-@keyframes indicateAnimation {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-        background-color: blue;
-    }
-    100% {
-        transform: scale(1.3);
-        background-color: black;
-    }
-}
 @keyframes hideMenuAnimation {
     0% {
         transform: scale(1);
@@ -351,10 +317,10 @@ button:active {
         transform: scale(1);
     }
 }
-.hide_menu {
+.hide-menu {
     animation: hideMenuAnimation 0.2s ease-in-out;
 }
-.open_menu {
+.open-menu {
     animation: openMenuAnimation 0.15s ease-in-out;
 }
 .appear {
@@ -372,21 +338,18 @@ button:active {
     z-index: 2;
     animation: largeMergeAnimation 0.7s ease-in-out;
 }
-.indicate {
-    animation: indicateAnimation 0.5s ease-in-out;
-}
 
-.square_3_digits {
-    color: rgb(243, 235, 211);
+.square-3-digits {
+    color: rgb(232, 225, 206);
     font-size: 42px;
 }
-.square_4_digits {
-    color: rgb(243, 235, 211);
+.square-4-digits {
+    color: rgb(232, 225, 206);
     font-size: 36px;
 }
 
-.square_5_digits {
-    color: rgb(243, 235, 211);
+.square-5-digits {
+    color: rgb(232, 225, 206);
     font-size: 28px;
 }
 
@@ -414,21 +377,21 @@ button:active {
         box-shadow: 0.4vw 0.4vw 0.4vw 0.4vw rgba(16, 12, 6, 0.2);
     }
     
-    #bottom_lists {
+    #bottom-list {
         display: none;
     }
-    #scores_button {
+    #scores-button {
         display: block;
     }
-    .square_3_digits {
+    .square-3-digits {
         color: rgb(243, 235, 211);
         font-size: 9vw;
     }
-    .square_4_digits {
+    .square-4-digits {
         color: rgb(243, 235, 211);
         font-size: 8vw;
     }
-    .square_5_digits {
+    .square-5-digits {
         color: rgb(243, 235, 211);
         font-size: 6.5vw;
     }
