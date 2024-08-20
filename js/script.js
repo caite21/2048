@@ -16,22 +16,23 @@ let INACTIVE_SQRS = [];
 let NEXT_LOCATION = [];
 
 const SQR_ELEMENTS  = Array.from(document.getElementsByClassName('square'));
+
 const SQR_COLOURS = {
-    2: "rgb(230, 221, 196)",
-    4: "rgb(232, 215, 148)",
-    8: "rgb(236, 190, 104)",
-    16: "rgb(237, 158, 93)",
-    32: "rgb(237, 150, 142)",
-    64: "#ccaad1",
-    128: "#58a1b3",
-    256: "#345f88",
-    512: "#83639d",
-    1024: "#3f893f",
-    2048: "#af5852",
-    4096: "#d3aa13",
-    8192: "#85b12f",
-    16384: "rgb(34, 131, 126)",
-    32768: "rgb(65, 35, 110)",
+    2: "#fddeaf",
+    4: "#f5be84",
+    8: "#fb965b",
+    16: "#fa724b", 
+    32: "#f54b31",
+    64: "#eb3951",
+    128: "#6a2283", 
+    256: "#2aa1d3",
+    512: "#2271ab",
+    1024: "#234882",
+    2048: "#1b1f46",
+    4096: "#b47bcb", 
+    8192: "#870c5c",
+    16384: "#7d000f",
+    32768: "#a88b2c",
     65536: "black",
 };
 
@@ -121,7 +122,7 @@ function animate(elem, CSS_class_name) {
 }
 
 function adjustLargeSquare(sqr) {
-    if (sqr.value < 100) return;
+    if (sqr.value < 16) return;
 
     if (sqr.value >= 10000) {
         sqr.elem.classList.add('square-5-digits');
@@ -129,8 +130,8 @@ function adjustLargeSquare(sqr) {
     else if (sqr.value >= 1000) {
         sqr.elem.classList.add('square-4-digits');
     }    
-    else if (sqr.value >= 100) {
-        sqr.elem.classList.add('square-3-digits');
+    else if (sqr.value >= 16) {
+        sqr.elem.classList.add('square-2-3-digits');
     }
 }
 
@@ -530,6 +531,7 @@ function play() {
     animate( document.getElementById("main-menu"), 'hide-menu');
     animate( document.getElementById("game-over-menu"), 'hide-menu');
     document.getElementById("score").innerHTML = SCORE;
+    document.getElementById("level").innerHTML = LEVEL; 
     document.getElementById('game-border').focus();
     setTimeout(() => {
         document.getElementById("main-menu").style.display = 'none';
@@ -549,7 +551,6 @@ function play() {
                 generateNewMedSquare();
         }
         else {
-            // activateTestGrid();
             generateNewSquare(); generateNewSquare();
         }
     }, 300);

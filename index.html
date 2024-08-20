@@ -7,239 +7,242 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-<!-- Header -->
-<div class="section" style="align-items: baseline;">
-    <div class="row-split">
-        <h1>2048+</h1>
-    </div>
-    <div class="row-split">
-        <div class="row">
-            <h3>Level: 2^</h3>
-            <h3 id="level">1</h3>
-        </div>
-        <button id="scores-button" onclick="openScoresMenu()">Scores</button>
-    </div>
-    <div class="row-split">
-        <div class="row">
-            <h3>Score:&nbsp;</h3>
-            <h3 id="score">0</h3>
-        </div>
-        <button id="menu-button" onclick="openMenu()">Menu</button>
-    </div>
-</div>
-<!-- Game Board -->
-<div id="game-border" tabindex="0" >
-    <div id="container-border">
-        <div id="container">
-            <!-- Background blocks -->
-            <div class="background-square" style="top: 0%; left: 0%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 0%; left: 24%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 0%; left: 48%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 0%; left: 72%">
-                <span class="number"></span>
-            </div>
-            
-            <div class="background-square" style="top: 24%; left: 0%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 24%; left: 24%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 24%; left: 48%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 24%; left: 72%">
-                <span class="number"></span>
-            </div>
-            
-            <div class="background-square" style="top: 48%; left: 0%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 48%; left: 24%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 48%; left: 48%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 48%; left: 72%">
-                <span class="number"></span>
-            </div>
+<body class="background-layer1">
+	<div class="background-layer2">
 
-            <div class="background-square" style="top: 72%; left: 0%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 72%; left: 24%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 72%; left: 48%">
-                <span class="number"></span>
-            </div>
-            <div class="background-square" style="top: 72%; left: 72%">
-                <span class="number"></span>
-            </div>
+		<!-- Header -->
+		<div class="section" style="align-items: baseline;">
+		    <div class="row-split">
+		        <h1>2048+</h1>
+		        <button id="menu-button" onclick="openMenu()">
+		        	Menu
+		        </button>
+		        <button id="scores-button" onclick="openScoresMenu()">Scores
+		        </button>
+		    </div>
+		    <div class="row-split">
+			    <div class="row">
+		            <h2>Level: 2^</h2>
+		            <h2 id="level">1</h2>
+		        </div>
+		        <div class="row">
+		            <h2>Score:&nbsp;</h2>
+		            <h2 id="score">0</h2>
+		        </div>
+		    </div>
+		</div>
+		<!-- Game Board -->
+		<div id="game-border" tabindex="0" >
+		    <div id="container-border">
+		        <div id="container">
+		            <!-- Background blocks -->
+		            <div class="background-square" style="top: 0%; left: 0%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 0%; left: 24%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 0%; left: 48%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 0%; left: 72%">
+		                <span class="number"></span>
+		            </div>
+		            
+		            <div class="background-square" style="top: 24%; left: 0%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 24%; left: 24%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 24%; left: 48%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 24%; left: 72%">
+		                <span class="number"></span>
+		            </div>
+		            
+		            <div class="background-square" style="top: 48%; left: 0%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 48%; left: 24%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 48%; left: 48%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 48%; left: 72%">
+		                <span class="number"></span>
+		            </div>
 
-            <!-- Moving blocks -->
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
-            <div class="square">
-                <span class="number"></span>
-            </div>
+		            <div class="background-square" style="top: 72%; left: 0%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 72%; left: 24%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 72%; left: 48%">
+		                <span class="number"></span>
+		            </div>
+		            <div class="background-square" style="top: 72%; left: 72%">
+		                <span class="number"></span>
+		            </div>
+
+		            <!-- Moving blocks -->
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
+		            <div class="square">
+		                <span class="number"></span>
+		            </div>
 
 
-            <!-- Main menu -->
-            <div class="menu center" id="main-menu" style="display: block;">
-                <div class="right">
-                    <button id="main-menu-close-button" class="small-button"
-                    onclick="document.getElementById('main-menu').style.display = 'none';    
-                            document.getElementById('game-border').focus();"
-                    >X</button>
-                </div>
-                <h3 id="menu-title"></h3>
-                <div>
-                    <button onclick="normalPlay()">Play</button>
-                </div>
-                <div>
-                    <button onclick="puzzlePlay()">Random Start</button>
-                </div>
-                <div>
-                    <br>
-                    <div class="row">
-                        <h3>Name:&nbsp;</h3>
-                        <h3 id="username"></h3>
-                        <h3>&nbsp;</h3>
-                        <div class="right">
-                            <button class="small-button" onclick="setUsername()">✎</button>
-                        </div>
-                    </div>
-                    <br>
-                    <h3>How to Play:</h3> 
-                    <p>
-                        Merge tiles of the same number to create bigger tiles and gain points. 
-                        Slide the tiles up, down, left, or right using arrow keys or swipe gestures.
-                    </p>
-                </div>
-            </div>
+		            <!-- Main menu -->
+		            <div class="menu center" id="main-menu" style="display: block;">
+		                <div class="right">
+		                    <button id="main-menu-close-button" class="small-button"
+		                    onclick="document.getElementById('main-menu').style.display = 'none';    
+		                            document.getElementById('game-border').focus();"
+		                    >X</button>
+		                </div>
+		                <h3 id="menu-title"></h3>
+		                <div>
+		                    <button onclick="normalPlay()">Play</button>
+		                </div>
+		                <div>
+		                    <button onclick="puzzlePlay()">Random Start</button>
+		                </div>
+		                <div>
+		                    <br>
+		                    <div class="row">
+		                        <h3>Name:&nbsp;</h3>
+		                        <h3 id="username"></h3>
+		                        <h3>&nbsp;</h3>
+		                        <div class="right">
+		                            <button class="small-button" onclick="setUsername()">✎</button>
+		                        </div>
+		                    </div>
+		                    <br>
+		                    <h3>How to Play:</h3> 
+		                    <p>
+		                        Merge tiles of the same number to create bigger tiles and gain points. 
+		                        Slide the tiles up, down, left, or right using arrow keys or swipe gestures.
+		                    </p>
+		                </div>
+		            </div>
 
-            <!-- Scores menu -->
-            <div class="menu" id="scores-menu">
-                <div class="right">
-                    <button class="small-button"
-                    onclick="document.getElementById('scores-menu').style.display = 'none';    
-                        document.getElementById('game-border').focus();"
-                    >X</button>
-                </div>
-                <!-- score lists -->
-                <div class="section">
-                    <div class="score-list">
-                        <h3 id="demo"></h3>
-                        <h3>Your Top Scores: </h3>
-                        <div class="row left">
-                            <p>1.&nbsp;</p>
-                            <p id="top-score-1"></p> 
-                        </div>
-                        <div class="row left">
-                            <p>2.&nbsp;</p>
-                            <p id="top-score-2"></p> 
-                        </div>
-                        <div class="row left">
-                            <p>3.&nbsp;</p>
-                            <p id="top-score-3"></p> 
-                        </div>
-                    </div>
-                </div>
-            </div> 
+		            <!-- Scores menu -->
+		            <div class="menu" id="scores-menu">
+		                <div class="right">
+		                    <button class="small-button"
+		                    onclick="document.getElementById('scores-menu').style.display = 'none';    
+		                        document.getElementById('game-border').focus();"
+		                    >X</button>
+		                </div>
+		                <!-- score lists -->
+		                <div class="section">
+		                    <div class="score-list">
+		                        <h3 id="demo"></h3>
+		                        <h3>Your Top Scores: </h3>
+		                        <div class="row left">
+		                            <p>1.&nbsp;</p>
+		                            <p id="top-score-1"></p> 
+		                        </div>
+		                        <div class="row left">
+		                            <p>2.&nbsp;</p>
+		                            <p id="top-score-2"></p> 
+		                        </div>
+		                        <div class="row left">
+		                            <p>3.&nbsp;</p>
+		                            <p id="top-score-3"></p> 
+		                        </div>
+		                    </div>
+		                </div>
+		            </div> 
 
-            <!-- Game over menu -->
-            <div class="sub-menu center" id="game-over-menu">
-                <div class="right">
-                    <button class="small-button"
-                    onclick="document.getElementById('game-over-menu').style.display = 'none';    
-                        document.getElementById('game-border').focus();"
-                    >X</button>
-                </div>
-                <h2>Game Over</h2>
-                <div class="row center">
-                    <h3>Score:&nbsp;</h3>
-                    <h3 id="game-over-score">0</h3>
-                </div>
-                <br>
-                <button onclick="normalPlay()">New Game</button>
-                <button onclick="puzzlePlay()">Random Start</button>
-            </div> 
-        </div>
-    </div>  
-</div>
-<!-- Bottom score list -->
-<div class="section" id="bottom-list">
-    <div class="score-list">
-        <h3 id="demo"></h3>
-        <h3>Your Top Scores: </h3>
-        <div class="row left">
-            <p>1.&nbsp;</p>
-            <p id="top-score-1-bottom"></p> 
-        </div>
-        <div class="row left">
-            <p>2.&nbsp;</p>
-            <p id="top-score-2-bottom"></p> 
-        </div>
-        <div class="row left">
-            <p>3.&nbsp;</p>
-            <p id="top-score-3-bottom"></p> 
-        </div>
+		            <!-- Game over menu -->
+		            <div class="sub-menu center" id="game-over-menu">
+		                <div class="right">
+		                    <button class="small-button"
+		                    onclick="document.getElementById('game-over-menu').style.display = 'none';    
+		                        document.getElementById('game-border').focus();"
+		                    >X</button>
+		                </div>
+		                <h2>Game Over</h2>
+		                <div class="row center">
+		                    <h3>Score:&nbsp;</h3>
+		                    <h3 id="game-over-score">0</h3>
+		                </div>
+		                <br>
+		                <button onclick="normalPlay()">New Game</button>
+		                <button onclick="puzzlePlay()">Random Start</button>
+		            </div> 
+		        </div>
+		    </div>  
+		</div><!-- Bottom score list -->
+		<div class="section" id="bottom-list">
+		    <div class="score-list">
+		        <h3 id="demo"></h3>
+		        <h3>Your Top Scores: </h3>
+		        <div class="row left">
+		            <p>1.&nbsp;</p>
+		            <p id="top-score-1-bottom"></p> 
+		        </div>
+		        <div class="row left">
+		            <p>2.&nbsp;</p>
+		            <p id="top-score-2-bottom"></p> 
+		        </div>
+		        <div class="row left">
+		            <p>3.&nbsp;</p>
+		            <p id="top-score-3-bottom"></p> 
+		        </div>
 
-    </div>
-</div>
-
+		    </div>
+		</div>
+	</div>
+		
 <script src="js/script.js"></script>
 </body>
 
